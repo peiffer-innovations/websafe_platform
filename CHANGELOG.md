@@ -1,3 +1,8 @@
+## [1.0.2+1] - Auguest 22nd, 2020
+
+* GitHub metadata updates
+
+
 ## [1.0.2] - April 30th, 2020
 
 * Added override option to assest with testing
