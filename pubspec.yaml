@@ -1,13 +1,13 @@
 name: websafe_platform
 description: Simple abstraction to be able to detect Web, Android, and iOS without a hard reference to `dart:io`
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/peiffer-innovations/websafe_platform
 
 environment:
   sdk: ">=2.5.0 <3.0.0"
 
 dependencies:
-  meta: ^1.2.2
+  meta: ^1.1.8
 
 dev_dependencies:
   test: any
