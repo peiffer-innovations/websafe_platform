@@ -1,3 +1,8 @@
+## [1.0.3] - August 22nd, 2020
+
+* Dependency version bumps
+
+
 ## [1.0.2+1] - Auguest 22nd, 2020
 
 * GitHub metadata updates
