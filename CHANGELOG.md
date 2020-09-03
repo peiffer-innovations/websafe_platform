@@ -1,3 +1,8 @@
+## [1.0.5] - September 3rd, 2020
+
+* Added checks for Linux, Mac, Windows, and Fuchsia
+
+
 ## [1.0.4] - August 22nd, 2020
 
 * Rolling back to meta 1.1.8 due to `flutter_test` incompatiblities

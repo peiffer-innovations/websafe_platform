@@ -22,9 +22,21 @@ class WebsafePlatform {
   /// Returns whether or not the application is running on Android
   bool isAndroid() => isPlatformAndroid();
 
+  /// Returns whether or not the application is running on Fuchsia native
+  bool isFuchsia() => isPlatformFuchsia();
+
   /// Returns whether or not the application is running on iOS
   bool isIOS() => isPlatformIOS();
 
+  /// Returns whether or not the application is running on Linux native
+  bool isLinux() => isPlatformLinux();
+
+  /// Returns whether or not the application is running on MacOS native
+  bool isMacOS() => isPlatformMacOS();
+
   /// Returns whether or not the application is running on Flutter Web
   bool isWeb() => isPlatformWeb();
+
+  /// Returns whether or not the application is running on Windows native
+  bool isWindows() => isPlatformWindows();
 }
