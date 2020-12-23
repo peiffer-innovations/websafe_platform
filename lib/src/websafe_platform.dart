@@ -1,4 +1,6 @@
-import 'package:meta/meta.dart';
+import 'package:meta/meta.dart' as meta;
+
+import 'platform/mock_platform.dart';
 
 // ignore: uri_does_not_exist
 import 'platform/stub_platform.dart'
@@ -9,13 +11,54 @@ import 'platform/stub_platform.dart'
 
 class WebsafePlatform {
   factory WebsafePlatform() => _singleton;
-  WebsafePlatform._internal();
+  const WebsafePlatform._internal();
+
+  factory WebsafePlatform.mock({
+    bool android = false,
+    bool fuchsia = false,
+    bool ios = false,
+    bool linux = false,
+    bool macos = false,
+    bool web = false,
+    bool windows = false,
+  }) =>
+      MockWebsafePlatform(
+        android: android,
+        fuchsia: fuchsia,
+        ios: ios,
+        linux: linux,
+        macos: macos,
+        web: web,
+        windows: windows,
+      );
+
   static WebsafePlatform _singleton = WebsafePlatform._internal();
+
+  /// Returns the strigified name of the platform.  The returned name will
+  /// always be in all lower case.  In the event the current platform is one
+  /// that is not currently known by the plugin, it will return `unknown`.
+  static String name(
+          [WebsafePlatform override = const WebsafePlatform._internal()]) =>
+      override.isAndroid()
+          ? 'android'
+          : override.isFuchsia()
+              ? 'fuchsia'
+              : override.isIOS()
+                  ? 'ios'
+                  : override.isLinux()
+                      ? 'linux'
+                      : override.isMacOS()
+                          ? 'macos'
+                          : override.isWeb()
+                              ? 'web'
+                              : override.isWindows()
+                                  ? 'windows'
+                                  : 'unknown';
 
   /// Sets a global override for what platforms should return [true] or [false].
   /// This can be used for testing because most tests don't run in an Android or
   /// iOS environment.
-  @visibleForTesting
+  @meta.visibleForTesting
   static void override(WebsafePlatform platform) =>
       _singleton = platform ?? WebsafePlatform._internal();
 

@@ -1,3 +1,9 @@
+## [1.1.0] - December 22nd, 2020
+
+* Added a `name` to `WebsafePlatform` to easily get a standardized name for the current platform.
+* Added a `mock` factory constructur to `WebsafePlatform` to assist with testing.
+
+
 ## [1.0.5] - September 3rd, 2020
 
 * Added checks for Linux, Mac, Windows, and Fuchsia
