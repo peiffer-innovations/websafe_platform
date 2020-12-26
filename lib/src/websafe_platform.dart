@@ -59,7 +59,7 @@ class WebsafePlatform {
   /// This can be used for testing because most tests don't run in an Android or
   /// iOS environment.
   @meta.visibleForTesting
-  static void override(WebsafePlatform platform) =>
+  static void override(WebsafePlatform? platform) =>
       _singleton = platform ?? WebsafePlatform._internal();
 
   /// Returns whether or not the application is running on Android

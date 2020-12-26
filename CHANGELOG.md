@@ -1,3 +1,8 @@
+## [1.2.0-nullsafety.0] - December 26th, 2020
+
+* Updated to nullsafety
+
+
 ## [1.1.0] - December 22nd, 2020
 
 * Added a `name` to `WebsafePlatform` to easily get a standardized name for the current platform.
