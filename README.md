@@ -53,7 +53,7 @@ void main() {
     });
 
     test('android', () {
-      WebsafePlatform.override(_MockWebsafePlatform(android: true));
+      WebsafePlatform.override(WebsafePlatform.mock(android: true));
       var websafePlatform = WebsafePlatform();
       expect(true, websafePlatform.isAndroid());
       expect(false, websafePlatform.isIOS());
@@ -61,7 +61,7 @@ void main() {
     });
 
     test('ios', () {
-      WebsafePlatform.override(_MockWebsafePlatform(ios: true));
+      WebsafePlatform.override(WebsafePlatform.mock(ios: true));
       var websafePlatform = WebsafePlatform();
       expect(false, websafePlatform.isAndroid());
       expect(true, websafePlatform.isIOS());
@@ -69,53 +69,12 @@ void main() {
     });
 
     test('web', () {
-      WebsafePlatform.override(_MockWebsafePlatform(web: true));
+      WebsafePlatform.override(WebsafePlatform.mock(web: true));
       var websafePlatform = WebsafePlatform();
       expect(false, websafePlatform.isAndroid());
       expect(false, websafePlatform.isIOS());
       expect(true, websafePlatform.isWeb());
     });
   });
-}
-
-class _MockWebsafePlatform implements WebsafePlatform {
-  _MockWebsafePlatform({
-    this.android = false,
-    this.fuchsia = false,
-    this.ios = false,
-    this.linux = false,
-    this.macos = false,
-    this.web = false,
-    this.windows = false,
-  });
-
-  final bool android;
-  final bool fuchsia;
-  final bool ios;
-  final bool linux;
-  final bool macos;
-  final bool web;
-  final bool windows;
-
-  @override
-  bool isAndroid() => android;
-
-  @override
-  bool isFuchsia() => fuchsia;
-
-  @override
-  bool isIOS() => ios;
-
-  @override
-  bool isLinux() => linux;
-
-  @override
-  bool isMacOS() => macos;
-
-  @override
-  bool isWeb() => web;
-
-  @override
-  bool isWindows() => windows;
 }
 ```
